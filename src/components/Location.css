@@ -1,0 +1,14 @@
+body {
+  margin: 0;
+  background-color: #27374d;
+  font-family: "Arial", sans-serif;
+}
+
+.location {
+
+  margin-bottom: 5px;
+  padding: 10px;
+  border-radius: 10px;
+  background-color: #526d82;
+  color: #dde6ed;
+}
