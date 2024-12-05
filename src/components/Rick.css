@@ -4,6 +4,15 @@ body {
   font-family: "Arial", sans-serif;
 }
 
+.location {
+
+  margin-bottom: 5px;
+  padding: 10px;
+  border-radius: 10px;
+  background-color: #6c6bbb;
+  color: #98ccf4;
+}
+
 .episode {
   margin-bottom: 5px;
   padding: 10px;
@@ -12,22 +21,24 @@ body {
   color: #dde6ed;
 }
 
+
 .characters-container {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
   padding: 10px;
+  overflow: auto;
 }
 
 .character {
-  width: 300px;
-  height: 140px;
-  border: 1px solid #526d82;
+  width: 360px;
+  height: 180px;
+  border: 1px solid purple;
   border-radius: 10px;
   margin-bottom: 10px;
   overflow: hidden;
   display: flex;
-  color: #526d82;
+  color: purple;
 }
 
 .character h3 {
@@ -58,5 +69,13 @@ body {
 .character-right {
   flex: 3;
   padding: 10px;
-  overflow: hidden;
+  overflow: auto;
 }
+
+.buttons{
+  margin-bottom: 5px;
+  padding: 10px;
+  border-radius: 10px;
+  background-color: #03508b;
+  color: #dde6ed;
+  }
