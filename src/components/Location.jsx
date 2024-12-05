@@ -1,10 +1,10 @@
 import { useEffect, useState } from "react";
-import { fetchLocations, fetchLocationsById } from "../api";
+import { fetchLocations, fetchCharacters } from "../api";
 import "./Location.css"
 
 export const Location = () =>{
     const [locations, setLocations] = useState([]);
-    const [locationById, setlocationById] = useState({});
+    const [charactersByLocations, setCharactersByLocations] = useState({});
 
 
     useEffect(() => {
@@ -15,14 +15,14 @@ export const Location = () =>{
     }, [])
 
     const handleLocationClick = (location) => {
-      const id = location.id
-      console.log(id)
-      
-    
-        fetchLocationsById(id).then((data) => {
+        const ids = location.residents.map((resident) => {
+            const id = resident.split("/").pop();
+            return id
+        });
+        fetchCharacters(ids).then((data) => {
             console.log(data);
-            setlocationById({...locationById, [location.id]:data});
-        })
+            setCharactersByLocations({ ...charactersByLocations, [location.id]: data });
+      });
     }
     
 
@@ -31,13 +31,20 @@ export const Location = () =>{
         <div>
             {locations.map((location) => {
                 return (
-                    <div key={location.id} 
+                    <div 
+                        key={location.id} 
                         className = 'location'
-                    onClick = {() => handleLocationClick(location)}
+                        onClick = {() => handleLocationClick(location)}
                     >
                         <h3>{location.id + ": " + location.name}</h3>
-                        <div className = "locations-container">
-                            {locationById.id}
+                        <div>
+                            {charactersByLocations[location.id]?.map((character) => {
+                                return(
+                                    <div key={location.id + ":" + character}>
+                                        {character.name}</div>
+                            )
+
+                        })}
                         </div>
                     </div>
                 )
