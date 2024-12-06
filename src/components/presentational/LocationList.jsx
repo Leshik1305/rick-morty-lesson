@@ -15,7 +15,7 @@ export const LocationList = () => {
                 className="buttons"
                 title="LOCATIONS"
                 content = {
-                    locations.map((location) =>{
+                    locations.map((location) =>(
                     <Collapse
                         key = {location.id}
                         className = "location"
@@ -29,7 +29,7 @@ export const LocationList = () => {
                             />
                         }
                     />
-                }
+                )
                 )
                 }
             />
