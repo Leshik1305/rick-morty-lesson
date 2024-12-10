@@ -12,7 +12,6 @@ export const Location = () =>{
 
     useEffect(() => {
         fetchLocations().then((data) => {
-            console.log(data)
             setLocations(data);
         })
     }, [])
