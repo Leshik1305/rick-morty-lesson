@@ -1,4 +1,3 @@
-import { LocationItem } from "./LocationItem";
 import { Collapse } from "./Collapse";
 import { CharacterListLoc } from "./CharacterListLoc";
 import { useLocations } from "../hooks/useLocations";
@@ -7,7 +6,6 @@ import "../Rick.css";
 
 export const LocationList = () => {
     const { locations } = useLocations();
-    console.log("dsad")
     return (
         
         <div>
@@ -29,7 +27,7 @@ export const LocationList = () => {
                             />
                         }
                     />
-                )
+                    )
                 )
                 }
             />
