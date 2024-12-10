@@ -7,7 +7,6 @@ function App() {
   return (
     <>
       <EpisodeList />
-      <Location/>
       <LocationList />
      
     </>
