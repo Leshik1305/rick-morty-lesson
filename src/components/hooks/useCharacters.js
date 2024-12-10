@@ -8,11 +8,12 @@ export const useCharacters = (ids) => {
   useEffect(() => {
     setIsLoading(true);
     fetchCharacters(ids).then((data) => {
-      console.log(data);
-      setCharacters(data);
+      const characters = Array.isArray(data) ? data : [data];
+      setCharacters(characters);
       setIsLoading(false);
     });
   }, [ids]);
 
   return { characters, isLoading };
 };
+
